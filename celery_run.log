@@ -1,0 +1,41 @@
+ 
+ -------------- celery@LAPTOP-F7216MLS v5.4.0 (opalescent)
+--- ***** ----- 
+-- ******* ---- Windows-11-10.0.26200-SP0 2026-07-13 23:49:25
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         mveousquiz:0x24560040ec0
+- ** ---------- .> transport:   redis://localhost:6380/0
+- ** ---------- .> results:     redis://localhost:6380/1
+- *** --- * --- .> concurrency: 24 (solo)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . documents.ingest
+  . quizzes.generate
+
+[2026-07-13 23:49:25,454: WARNING/MainProcess] D:\quizapp\backend\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2026-07-13 23:49:25,461: INFO/MainProcess] Connected to redis://localhost:6380/0
+[2026-07-13 23:49:25,461: WARNING/MainProcess] D:\quizapp\backend\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2026-07-13 23:49:25,465: INFO/MainProcess] mingle: searching for neighbors
+[2026-07-13 23:49:26,497: INFO/MainProcess] mingle: all alone
+[2026-07-13 23:49:26,518: INFO/MainProcess] celery@LAPTOP-F7216MLS ready.
+[2026-07-13 23:49:47,661: INFO/MainProcess] Task quizzes.generate[c597083c-86de-4226-9b0b-3d292e7813a2] received
+[2026-07-13 23:49:48,934: INFO/MainProcess] HTTP Request: GET https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=world+war+3&srlimit=2&format=json "HTTP/1.1 200 OK"
+[2026-07-13 23:49:49,292: INFO/MainProcess] HTTP Request: GET https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=World+War+III%7CWorld+War+3+Illustrated&format=json "HTTP/1.1 200 OK"
+[2026-07-13 23:49:50,057: WARNING/MainProcess] llama_new_context_with_model: n_ctx_per_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+[2026-07-13 23:51:17,752: INFO/MainProcess] Task quizzes.generate[c597083c-86de-4226-9b0b-3d292e7813a2] succeeded in 90.09098840001388s: None

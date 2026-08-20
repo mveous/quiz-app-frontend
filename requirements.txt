@@ -1,0 +1,37 @@
+fastapi==0.139.0
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+email-validator==2.2.0
+SQLAlchemy==2.0.36
+greenlet==3.1.1
+alembic==1.14.0
+asyncpg==0.30.0
+psycopg2-binary==2.9.10
+pgvector==0.3.6
+python-jose[cryptography]==3.5.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.2.1
+celery==5.4.0
+redis==5.2.1
+httpx==0.28.1
+python-multipart==0.0.32
+slowapi==0.1.9
+pypdf==5.1.0
+reportlab==4.2.5
+aiosmtplib==3.0.2
+
+# Shali v1 (in-process AI provider). PyPI ships no Windows wheel (source build
+# needs a C++ toolchain), so pull the prebuilt CPU wheel from the project's own
+# index. Swap /whl/cpu for e.g. /whl/cu124 for a CUDA build if you have the full
+# CUDA Toolkit installed (the driver alone is not enough).
+# Pinned to 0.3.2, NOT latest: 0.3.33's bundled ggml-cpu.dll crashes with
+# STATUS_ILLEGAL_INSTRUCTION (0xc000001d) on load on Intel 12th/13th/14th-gen
+# hybrid CPUs (repack/AVX-VNNI dispatch bug in that build) -- see .ai/issues.md #8.
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+llama-cpp-python==0.3.2
+huggingface-hub==0.28.1
+
+pytest==9.1.1
+pytest-asyncio==1.4.0
+pytest-cov==6.0.0

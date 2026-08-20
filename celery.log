@@ -1,0 +1,208 @@
+ 
+ -------------- celery@LAPTOP-F7216MLS v5.4.0 (opalescent)
+--- ***** ----- 
+-- ******* ---- Windows-11-10.0.26200-SP0 2026-07-13 01:05:22
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         mveousquiz:0x1997d0d0c20
+- ** ---------- .> transport:   redis://localhost:6380/0
+- ** ---------- .> results:     redis://localhost:6380/1
+- *** --- * --- .> concurrency: 24 (solo)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . documents.ingest
+  . quizzes.generate
+
+[2026-07-13 01:05:23,013: WARNING/MainProcess] D:\quizapp\backend\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2026-07-13 01:05:23,020: INFO/MainProcess] Connected to redis://localhost:6380/0
+[2026-07-13 01:05:23,020: WARNING/MainProcess] D:\quizapp\backend\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2026-07-13 01:05:23,028: INFO/MainProcess] mingle: searching for neighbors
+[2026-07-13 01:05:24,055: INFO/MainProcess] mingle: all alone
+[2026-07-13 01:05:24,072: INFO/MainProcess] celery@LAPTOP-F7216MLS ready.
+[2026-07-13 01:05:30,763: INFO/MainProcess] Task quizzes.generate[7914e9af-fae2-451f-8751-71f65081fa35] received
+[2026-07-13 01:05:30,954: WARNING/MainProcess] llama_new_context_with_model: n_ctx_per_seq (512) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+[2026-07-13 01:05:31,955: INFO/MainProcess] HTTP Request: GET https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Photosynthesis&srlimit=2&format=json "HTTP/1.1 200 OK"
+[2026-07-13 01:05:32,329: INFO/MainProcess] HTTP Request: GET https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=Photosynthesis%7CPhotosynthesis+%28disambiguation%29&format=json "HTTP/1.1 200 OK"
+[2026-07-13 01:05:33,175: WARNING/MainProcess] llama_new_context_with_model: n_ctx_per_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+[2026-07-13 01:06:58,448: INFO/MainProcess] Task quizzes.generate[7914e9af-fae2-451f-8751-71f65081fa35] succeeded in 87.68479279999156s: None
+[2026-07-13 01:07:22,908: INFO/MainProcess] Task documents.ingest[0f652fef-d5e6-4a27-954d-26f376e7e19a] received
+[2026-07-13 01:07:22,988: WARNING/MainProcess] Document c983030e-af51-4f3d-a448-6a0655b81210 not found for ingestion task
+[2026-07-13 01:07:22,994: INFO/MainProcess] Task documents.ingest[0f652fef-d5e6-4a27-954d-26f376e7e19a] succeeded in 0.08588379999855533s: None
+[2026-07-13 01:07:23,522: INFO/MainProcess] Task documents.ingest[e391110d-e938-45cd-9656-9092a14c06d0] received
+[2026-07-13 01:07:23,601: WARNING/MainProcess] Document 491d7404-dc1e-4420-a7a3-a5e927d1b685 not found for ingestion task
+[2026-07-13 01:07:23,606: INFO/MainProcess] Task documents.ingest[e391110d-e938-45cd-9656-9092a14c06d0] succeeded in 0.08355650000157766s: None
+[2026-07-13 01:07:24,129: INFO/MainProcess] Task documents.ingest[a748a0b6-fe04-483d-bed6-f0adb103a691] received
+[2026-07-13 01:07:24,162: WARNING/MainProcess] Document f395c748-f4ad-41d9-9247-1458f06ab44e not found for ingestion task
+[2026-07-13 01:07:24,166: INFO/MainProcess] Task documents.ingest[a748a0b6-fe04-483d-bed6-f0adb103a691] succeeded in 0.03628150001168251s: None
+[2026-07-13 01:07:24,722: INFO/MainProcess] Task documents.ingest[048732a2-17ea-403d-8caf-dae5d5abd9df] received
+[2026-07-13 01:07:24,772: WARNING/MainProcess] Document e7950d54-f7d8-48fd-b68a-31a9dae941cb not found for ingestion task
+[2026-07-13 01:07:24,776: INFO/MainProcess] Task documents.ingest[048732a2-17ea-403d-8caf-dae5d5abd9df] succeeded in 0.05409339998732321s: None
+[2026-07-13 01:07:25,227: INFO/MainProcess] Task documents.ingest[f5c248bf-2b2f-4f36-a0d6-ff5f27a18de2] received
+[2026-07-13 01:07:25,279: WARNING/MainProcess] Document 84fd8d22-a00a-4439-8062-6da9ca882e6a not found for ingestion task
+[2026-07-13 01:07:25,285: INFO/MainProcess] Task documents.ingest[f5c248bf-2b2f-4f36-a0d6-ff5f27a18de2] succeeded in 0.05805230000987649s: None
+[2026-07-13 01:07:27,375: INFO/MainProcess] Task documents.ingest[24af8854-a62b-4690-875c-ef3a850883ac] received
+[2026-07-13 01:07:27,411: WARNING/MainProcess] Document ab98801e-c6ec-4563-b14e-77c597536972 not found for ingestion task
+[2026-07-13 01:07:27,415: INFO/MainProcess] Task documents.ingest[24af8854-a62b-4690-875c-ef3a850883ac] succeeded in 0.03972580001573078s: None
+[2026-07-13 01:07:28,436: INFO/MainProcess] Task documents.ingest[644d4bb7-b9e5-487b-ae84-d5ad214720df] received
+[2026-07-13 01:07:28,493: WARNING/MainProcess] Document 5e51d128-680c-48c6-9179-63ad26ab7af7 not found for ingestion task
+[2026-07-13 01:07:28,499: INFO/MainProcess] Task documents.ingest[644d4bb7-b9e5-487b-ae84-d5ad214720df] succeeded in 0.0626553000183776s: None
+[2026-07-13 01:07:29,539: INFO/MainProcess] Task quizzes.generate[f8c06ae9-668c-4f76-971d-4c24c6a8d056] received
+[2026-07-13 01:07:29,589: WARNING/MainProcess] Quiz 2254310a-fd50-4335-8917-64dc50d4124e not found for generation task
+[2026-07-13 01:07:29,593: INFO/MainProcess] Task quizzes.generate[f8c06ae9-668c-4f76-971d-4c24c6a8d056] succeeded in 0.05410030001075938s: None
+[2026-07-13 01:07:30,206: INFO/MainProcess] Task quizzes.generate[064b2205-bd55-4456-8c5d-5d06993cd14e] received
+[2026-07-13 01:07:30,247: WARNING/MainProcess] Quiz 9c655df5-05c7-45c8-8963-ee210ef0cb61 not found for generation task
+[2026-07-13 01:07:30,253: INFO/MainProcess] Task quizzes.generate[064b2205-bd55-4456-8c5d-5d06993cd14e] succeeded in 0.046946899994509295s: None
+[2026-07-13 01:07:30,307: INFO/MainProcess] Task quizzes.generate[51c32b34-40a2-4091-9324-26383e600fc4] received
+[2026-07-13 01:07:30,370: WARNING/MainProcess] Quiz 8a115294-ec6b-41b1-8af8-e42568fea0e0 not found for generation task
+[2026-07-13 01:07:30,376: INFO/MainProcess] Task quizzes.generate[51c32b34-40a2-4091-9324-26383e600fc4] succeeded in 0.06812820001505315s: None
+[2026-07-13 01:07:30,935: INFO/MainProcess] Task quizzes.generate[0e6b1da2-dfce-4c56-9a5f-49684a4b6ef9] received
+[2026-07-13 01:07:30,982: WARNING/MainProcess] Quiz 3f1f509b-bc33-4545-886c-97639201c08e not found for generation task
+[2026-07-13 01:07:30,987: INFO/MainProcess] Task quizzes.generate[0e6b1da2-dfce-4c56-9a5f-49684a4b6ef9] succeeded in 0.05121649999637157s: None
+[2026-07-13 01:07:31,604: INFO/MainProcess] Task quizzes.generate[54a319e5-1fab-459a-843e-d6ac2aa4d512] received
+[2026-07-13 01:07:31,660: WARNING/MainProcess] Quiz 48eda409-67d5-49be-946f-e4785983b391 not found for generation task
+[2026-07-13 01:07:31,665: INFO/MainProcess] Task quizzes.generate[54a319e5-1fab-459a-843e-d6ac2aa4d512] succeeded in 0.06041109998477623s: None
+[2026-07-13 01:07:32,719: INFO/MainProcess] Task quizzes.generate[300fd61e-0453-4791-a2ac-fb2ee9e35f4b] received
+[2026-07-13 01:07:32,759: WARNING/MainProcess] Quiz 46dfa2dd-8da4-4db4-83d5-9f93fe65ad74 not found for generation task
+[2026-07-13 01:07:32,764: INFO/MainProcess] Task quizzes.generate[300fd61e-0453-4791-a2ac-fb2ee9e35f4b] succeeded in 0.04485530001693405s: None
+[2026-07-13 01:07:33,427: INFO/MainProcess] Task quizzes.generate[c2b77abb-8a72-4558-b08e-0590a81e9c28] received
+[2026-07-13 01:07:33,482: WARNING/MainProcess] Quiz 6a2b2f99-d5a4-49de-937d-a0a2ee13a22e not found for generation task
+[2026-07-13 01:07:33,486: INFO/MainProcess] Task quizzes.generate[c2b77abb-8a72-4558-b08e-0590a81e9c28] succeeded in 0.05887420001090504s: None
+[2026-07-13 01:07:33,967: INFO/MainProcess] Task quizzes.generate[a34c9189-0eb0-4d51-9a4b-cf5e98a75463] received
+[2026-07-13 01:07:34,028: WARNING/MainProcess] Quiz b40f623a-fb42-44ca-907c-62da4f94cc01 not found for generation task
+[2026-07-13 01:07:34,033: INFO/MainProcess] Task quizzes.generate[a34c9189-0eb0-4d51-9a4b-cf5e98a75463] succeeded in 0.0657669999927748s: None
+[2026-07-13 01:07:34,629: INFO/MainProcess] Task quizzes.generate[f365ab58-f75d-4931-b6de-26ccd8c017f8] received
+[2026-07-13 01:07:34,675: WARNING/MainProcess] Quiz 61c054df-a838-409f-a6c2-0df2a57f9b35 not found for generation task
+[2026-07-13 01:07:34,681: INFO/MainProcess] Task quizzes.generate[f365ab58-f75d-4931-b6de-26ccd8c017f8] succeeded in 0.051814000005833805s: None
+[2026-07-13 01:07:36,337: INFO/MainProcess] Task documents.ingest[d08576fd-de44-45bb-a414-379d6cdc0c35] received
+[2026-07-13 01:07:36,388: WARNING/MainProcess] Document f090e1ec-fe6b-4096-8c2e-007924d72757 not found for ingestion task
+[2026-07-13 01:07:36,393: INFO/MainProcess] Task documents.ingest[d08576fd-de44-45bb-a414-379d6cdc0c35] succeeded in 0.0557078999991063s: None
+[2026-07-13 01:07:36,893: INFO/MainProcess] Task documents.ingest[455ebc60-0277-46bd-ad48-cd1b4ac1e221] received
+[2026-07-13 01:07:36,939: WARNING/MainProcess] Document 4a555831-bf25-40a9-bf43-742f2f71a903 not found for ingestion task
+[2026-07-13 01:07:36,944: INFO/MainProcess] Task documents.ingest[455ebc60-0277-46bd-ad48-cd1b4ac1e221] succeeded in 0.05022540001664311s: None
+[2026-07-13 01:07:37,485: INFO/MainProcess] Task quizzes.generate[1ded555e-be2f-4ce0-bb86-bdd4f17bdbff] received
+[2026-07-13 01:07:37,540: WARNING/MainProcess] Quiz d63c8da4-0bee-4177-84bc-634136f17812 not found for generation task
+[2026-07-13 01:07:37,546: INFO/MainProcess] Task quizzes.generate[1ded555e-be2f-4ce0-bb86-bdd4f17bdbff] succeeded in 0.06027749998611398s: None
+[2026-07-13 01:07:38,102: INFO/MainProcess] Task documents.ingest[bc6d57d5-29bd-4262-b11a-65a222b06f15] received
+[2026-07-13 01:07:38,149: WARNING/MainProcess] Document 62c2ebc3-2085-4c22-ae78-5183c8330ff6 not found for ingestion task
+[2026-07-13 01:07:38,154: INFO/MainProcess] Task documents.ingest[bc6d57d5-29bd-4262-b11a-65a222b06f15] succeeded in 0.05180259997723624s: None
+[2026-07-13 01:07:38,169: INFO/MainProcess] Task quizzes.generate[91d0f0bb-8fa6-4675-a774-4bd11a0b9370] received
+[2026-07-13 01:07:38,205: WARNING/MainProcess] Quiz 5c97bdb6-fb7b-43fb-93e2-701f145f1d37 not found for generation task
+[2026-07-13 01:07:38,210: INFO/MainProcess] Task quizzes.generate[91d0f0bb-8fa6-4675-a774-4bd11a0b9370] succeeded in 0.04164169999421574s: None
+[2026-07-13 01:07:38,769: INFO/MainProcess] Task quizzes.generate[96e53edf-f2f7-4486-808f-9d3c7999313e] received
+[2026-07-13 01:07:38,829: WARNING/MainProcess] Quiz 92efd496-f8aa-4bf9-92a8-22568101c088 not found for generation task
+[2026-07-13 01:07:38,835: INFO/MainProcess] Task quizzes.generate[96e53edf-f2f7-4486-808f-9d3c7999313e] succeeded in 0.06528899999102578s: None
+[2026-07-13 01:07:39,380: INFO/MainProcess] Task documents.ingest[6247c87c-b35f-4dc1-b88f-63ab2ee4537c] received
+[2026-07-13 01:07:39,417: WARNING/MainProcess] Document e5c9e3c2-63cf-4125-849e-2bda7ba02b23 not found for ingestion task
+[2026-07-13 01:07:39,421: INFO/MainProcess] Task documents.ingest[6247c87c-b35f-4dc1-b88f-63ab2ee4537c] succeeded in 0.04145119999884628s: None
+[2026-07-13 01:07:39,430: INFO/MainProcess] Task quizzes.generate[61a876c9-ba89-4c7e-8fe9-b68fb8ec07ba] received
+[2026-07-13 01:07:39,465: WARNING/MainProcess] Quiz 8489c764-4453-49f3-9b4a-2ce3be7c49c3 not found for generation task
+[2026-07-13 01:07:39,469: INFO/MainProcess] Task quizzes.generate[61a876c9-ba89-4c7e-8fe9-b68fb8ec07ba] succeeded in 0.038768500002333894s: None
+[2026-07-13 01:07:39,974: INFO/MainProcess] Task quizzes.generate[8b585906-e352-40a5-a685-57fbc48708ec] received
+[2026-07-13 01:07:40,034: WARNING/MainProcess] Quiz ab010950-4fa4-44c5-a5c4-275409a802ec not found for generation task
+[2026-07-13 01:07:40,037: INFO/MainProcess] Task quizzes.generate[8b585906-e352-40a5-a685-57fbc48708ec] succeeded in 0.06249849998857826s: None
+[2026-07-13 01:07:40,676: INFO/MainProcess] Task quizzes.generate[0b921b0c-42c8-4dc1-a9ed-40343e5de5d0] received
+[2026-07-13 01:07:40,759: WARNING/MainProcess] Quiz a2afcfaa-3371-49a3-a9bb-5a1d45a95717 not found for generation task
+[2026-07-13 01:07:40,765: INFO/MainProcess] Task quizzes.generate[0b921b0c-42c8-4dc1-a9ed-40343e5de5d0] succeeded in 0.08904600000823848s: None
+[2026-07-13 01:07:40,854: INFO/MainProcess] Task quizzes.generate[83335b68-19d1-4ef4-96c6-81530a36ff2f] received
+[2026-07-13 01:07:40,888: WARNING/MainProcess] Quiz 52217ed6-b06e-45c6-a926-5ca44b63510f not found for generation task
+[2026-07-13 01:07:40,892: INFO/MainProcess] Task quizzes.generate[83335b68-19d1-4ef4-96c6-81530a36ff2f] succeeded in 0.037817200005520135s: None
+[2026-07-13 01:07:41,544: INFO/MainProcess] Task quizzes.generate[14e272e5-01c1-40ab-8b10-dc4ad0618490] received
+[2026-07-13 01:07:41,591: WARNING/MainProcess] Quiz d28edd9b-5bc6-4796-9f0e-215ca99776d6 not found for generation task
+[2026-07-13 01:07:41,595: INFO/MainProcess] Task quizzes.generate[14e272e5-01c1-40ab-8b10-dc4ad0618490] succeeded in 0.05011509999167174s: None
+[2026-07-13 01:07:41,700: INFO/MainProcess] Task quizzes.generate[1866fc7d-31f7-4803-8133-95b6ece89a10] received
+[2026-07-13 01:07:41,756: WARNING/MainProcess] Quiz d6345595-e411-4149-913b-7eab21bcb4f7 not found for generation task
+[2026-07-13 01:07:41,761: INFO/MainProcess] Task quizzes.generate[1866fc7d-31f7-4803-8133-95b6ece89a10] succeeded in 0.060699299996485934s: None
+[2026-07-13 01:07:41,872: INFO/MainProcess] Task quizzes.generate[7136fbc8-027a-47d7-bce8-c0bc1fbba197] received
+[2026-07-13 01:07:41,922: WARNING/MainProcess] Quiz 9ad346ef-9507-458d-ac5e-9681da4b5e36 not found for generation task
+[2026-07-13 01:07:41,927: INFO/MainProcess] Task quizzes.generate[7136fbc8-027a-47d7-bce8-c0bc1fbba197] succeeded in 0.05460939998738468s: None
+[2026-07-13 01:07:42,584: INFO/MainProcess] Task quizzes.generate[6d2dff8f-dfae-4912-a126-a1666a84ac00] received
+[2026-07-13 01:07:42,659: WARNING/MainProcess] Quiz b7820b26-bd15-4284-8e19-ea58b9b43b12 not found for generation task
+[2026-07-13 01:07:42,664: INFO/MainProcess] Task quizzes.generate[6d2dff8f-dfae-4912-a126-a1666a84ac00] succeeded in 0.07986410000012256s: None
+[2026-07-13 01:07:43,256: INFO/MainProcess] Task quizzes.generate[7ec688e1-cbcd-4366-a3fd-5faaf8a7e8cf] received
+[2026-07-13 01:07:43,308: WARNING/MainProcess] Quiz 630fbcd6-d597-45b1-8343-d3782d2d27fe not found for generation task
+[2026-07-13 01:07:43,313: INFO/MainProcess] Task quizzes.generate[7ec688e1-cbcd-4366-a3fd-5faaf8a7e8cf] succeeded in 0.05650380000588484s: None
+[2026-07-13 01:07:43,941: INFO/MainProcess] Task quizzes.generate[2c5f22a9-fbce-47f6-a8c2-6e8dee556a86] received
+[2026-07-13 01:07:43,990: WARNING/MainProcess] Quiz ed734b2b-8a54-4488-8997-cfd17ab5a966 not found for generation task
+[2026-07-13 01:07:43,994: INFO/MainProcess] Task quizzes.generate[2c5f22a9-fbce-47f6-a8c2-6e8dee556a86] succeeded in 0.05269369998131879s: None
+[2026-07-13 01:07:44,554: INFO/MainProcess] Task quizzes.generate[ecb2daad-4795-4e2c-b3c5-5c946e7d5a8c] received
+[2026-07-13 01:07:44,593: WARNING/MainProcess] Quiz 1f6f089b-bb22-474d-91e1-42553adbe339 not found for generation task
+[2026-07-13 01:07:44,599: INFO/MainProcess] Task quizzes.generate[ecb2daad-4795-4e2c-b3c5-5c946e7d5a8c] succeeded in 0.04427620000205934s: None
+[2026-07-13 01:07:45,238: INFO/MainProcess] Task quizzes.generate[a86a1e6a-310b-429b-b2a2-a93a2cb6965e] received
+[2026-07-13 01:07:45,287: WARNING/MainProcess] Quiz 89021f09-a29f-4050-9790-513c2f2e03e6 not found for generation task
+[2026-07-13 01:07:45,292: INFO/MainProcess] Task quizzes.generate[a86a1e6a-310b-429b-b2a2-a93a2cb6965e] succeeded in 0.05366019997745752s: None
+[2026-07-13 01:07:45,936: INFO/MainProcess] Task quizzes.generate[756a2865-ddfc-480a-8c13-ec57bf6b2044] received
+[2026-07-13 01:07:45,983: WARNING/MainProcess] Quiz 7af49d5d-ba47-447b-a96e-8b13c3210a55 not found for generation task
+[2026-07-13 01:07:45,987: INFO/MainProcess] Task quizzes.generate[756a2865-ddfc-480a-8c13-ec57bf6b2044] succeeded in 0.05054460000246763s: None
+[2026-07-13 01:07:46,605: INFO/MainProcess] Task quizzes.generate[3c8d3ab1-8e1d-4f65-86b1-1ce28db3fd35] received
+[2026-07-13 01:07:46,646: WARNING/MainProcess] Quiz db2079dc-22c9-44f7-b5cc-67ffc67254db not found for generation task
+[2026-07-13 01:07:46,652: INFO/MainProcess] Task quizzes.generate[3c8d3ab1-8e1d-4f65-86b1-1ce28db3fd35] succeeded in 0.04726880000089295s: None
+[2026-07-13 01:07:47,224: INFO/MainProcess] Task quizzes.generate[647d7ce7-f0db-45cf-a230-219a340c9530] received
+[2026-07-13 01:07:47,269: WARNING/MainProcess] Quiz 00ee6281-b219-45f5-b91e-668fe99850bc not found for generation task
+[2026-07-13 01:07:47,275: INFO/MainProcess] Task quizzes.generate[647d7ce7-f0db-45cf-a230-219a340c9530] succeeded in 0.05057620001025498s: None
+[2026-07-13 01:07:48,717: INFO/MainProcess] Task quizzes.generate[71b1d440-1d5d-48b7-b45e-bd90c136cd6a] received
+[2026-07-13 01:07:48,760: WARNING/MainProcess] Quiz 1e29ea0d-d443-4001-8f8e-66472023815b not found for generation task
+[2026-07-13 01:07:48,765: INFO/MainProcess] Task quizzes.generate[71b1d440-1d5d-48b7-b45e-bd90c136cd6a] succeeded in 0.0475948000093922s: None
+[2026-07-13 01:07:49,314: INFO/MainProcess] Task quizzes.generate[6c8969f7-5557-4fd0-8e03-074249ddeb63] received
+[2026-07-13 01:07:49,360: WARNING/MainProcess] Quiz ca7acc27-7da5-4bf6-8609-bd21c0843db0 not found for generation task
+[2026-07-13 01:07:49,365: INFO/MainProcess] Task quizzes.generate[6c8969f7-5557-4fd0-8e03-074249ddeb63] succeeded in 0.0505422999849543s: None
+[2026-07-13 01:10:05,729: INFO/MainProcess] Task quizzes.generate[12a3c856-85f0-4eef-8770-424374342856] received
+[2026-07-13 01:10:06,899: INFO/MainProcess] HTTP Request: GET https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=word+war+&srlimit=2&format=json "HTTP/1.1 200 OK"
+[2026-07-13 01:10:07,992: INFO/MainProcess] HTTP Request: GET https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=War+Is+the+H-Word%7CWord+Wars&format=json "HTTP/1.1 200 OK"
+[2026-07-13 01:15:34,544: ERROR/MainProcess] AI provider returned unparseable JSON: '[\n    {\n        "type": "mcq",\n        "prompt": "Which of the following is a parody of a famous war film in the episode \'War Is the H-Word\'?",\n        "difficulty": "medium",\n        "explanation": "The episode \'War Is the H-Word\' parodies several war films, including Starship Troopers, Star Wars, and M*A*S*H. Among these, Starship Troopers is a well-known science fiction film that was parodied in the episode.",\n        "options": [\n            {"label": "Starship Troopers", "text": "Starship Troopers", "is_correct": true},\n            {"label": "The Godfather", "text": "The Godfather", "is_correct": false},\n            {"label": "Juno", "text": "Juno", "is_correct": false},\n            {"label": "The Matrix", "text": "The Matrix", "is_correct": false}\n        ],\n        "correct_answer_text": "Starship Troopers"\n    },\n    {\n        "type": "mcq",\n        "prompt": "How many seasons of Futurama does the episode \'War Is the H-Word\' belong to?",\n        "difficulty": "medium",\n        "explanation": "The episode \'War Is the H-Word\' is part of the second season of Futurama, which aired from 1999 to 2003.",\n        "options": [\n            {"label": "First", "text": "First", "is_correct": false},\n            {"label": "Second", "text": "Second", "is_correct": true},\n            {"label": "Third", "text": "Third", "is_correct": false},\n            {"label": "Fourth", "text": "Fourth", "is_correct": false}\n        ],\n        "correct_answer_text": "Second"\n    },\n    {\n        "type": "mcq",\n        "prompt": "Which documentary film is about competitive Scrabble?",\n        "difficulty": "medium",\n        "explanation": "The documentary film \'Word Wars: Tiles and Tribulations on the Scrabble Circuit\' is about competitive Scrabble, following players in the nine months leading up to the 2002 National Scrabble Championship.",\n        "options": [\n            {"label": "Word Wars", "text": "Word Wars", "is_correct": true},\n            {"label": "War Is the H-Word", "text": "War Is the H-Word", "is_correct": false},\n            {"label": "The Godfather", "text": "The Godfather", "is_correct": false},\n            {"label": "Juno", "text": "Juno", "is_correct": false}\n        ],\n        "correct_answer_text": "Word Wars"\n    },\n    {\n        "type": "mcq",\n        "prompt": "In the documentary \'Word Wars\', how many players are followed leading up to the 2002 National Scrabble Championship?",\n        "difficulty": "medium",\n        "explanation": "The documentary \'Word Wars\' follows four players in the nine months leading up to the 2002 National Scrabble Championship: Joe Edley, Matt Graham, Marlon Hill, and Joel Sherman.",\n        "options": [\n            {"label": "3", "text": "3", "is_correct": false},\n            {"label": "4", "text": "4", "is_correct": true},\n            {"label": "5", "text": "5", "is_correct": false},\n            {"label": "6", "text": "6", "is_correct": false}\n        ],\n        "correct_answer_text": "4"\n    },\n    {\n        "type": "mcq",\n        "prompt": "Which of the following is not a player followed in the documentary \'Word Wars\'?",\n        "difficulty": "medium",\n        "explanation": "The documentary \'Word Wars\' follows four players: Joe Edley, Matt Graham, Marlon Hill, and Joel Sherman. If we exclude these, \'The Godfather\' is not a player.",\n        "options": [\n            {"label": "Joe Edley", "text": "Joe Edley", "is_correct": false},\n            {"label": "Matt Graham", "text": "Matt Graham", "is_correct": false},\n            {"label": "Marlon Hill", "text": "Marlon Hill", "is_correct": false},\n            {"label": "The Godfather", "text": "The Godfather", "is_correct": true}\n        ],\n        "correct_answer_text": "The Godfather"\n    },\n    {\n        "type": "mcq",\n        "prompt": "In the documentary \'Word Wars\', which player is also mentioned in Stefan Fatsis\'s book \'Word Freak\'?",\n        "difficulty": "medium",\n        "explanation": "The documentary \'Word Wars\' and Stefan Fatsis\'s book \'Word Freak\' both feature the same four players: Joe Edley, Matt Graham, Marlon Hill, and Joel Sherman.",\n        "options": [\n            {"label": "Joe Edley", "text": "Joe Edley", "is_correct": true},\n            {"label": "Matt Graham", "text": "Matt Graham", "is_correct": false},\n            {"label": "Marlon Hill", "text": "Marlon Hill", "is_correct": false},\n            {"label": "Joel Sherman", "text": "Joel Sherman", "is_correct": false}\n        ],\n        "correct_answer_text": "Joe Edley"\n    },\n    {\n        "type": "mcq",\n        "prompt": "Which of the following is not a true statement about the documentary \'Word Wars\'?",\n        "difficulty": "medium",\n        "explanation": "The documentary \'Word Wars\' was an official selection at the 2004 Sundance Film Festival, had a 25-city theatrical run, was included as part of the Discovery Times Channel\'s \'Screening Room\' series, and was nominated for numerous awards, including a 2004 Documentary Emmy for \'Best Artistic or Cultural Programming\' and an International Documentary Association (IDA) Award. \'The Godfather\' is not a documentary film.",\n        "options": [\n            {"label": "It was an official selection at the 2004 Sundance Film Festival", "text": "It was an official selection at the 2004 Sundance Film Festival", "is_correct": false},\n            {"label": "It had a 25-city theatrical run", "text": "It had a 25-city theatrical run", "is_correct": false},\n            {"label": "It was nominated for a 2004 Documentary Emmy", "text": "It was nominated for a 2004 Documentary Emmy", "is_correct": false},\n            {"label": "It is a documentary film about \'The Godfather\'", "text": "It is a documentary film about \'The Godfather\'", "is_correct": true}\n        ],\n        "correct_answer_text": "It is a documentary film about \'The Godfather\'"\n    },\n    {\n        "type": "mcq",\n        "prompt": "Which of the following is a true statement about the episode \'War Is the H-Word\'?",\n        "difficulty": "medium",\n        "explanation": "The episode \'War Is the H-Word\' is the 17th episode of the second season of Futurama and originally aired on Fox on November 26, 2000. It is not a true statement that it aired on a different network or on a different date.",\n        "options": [\n            {"label": "It aired on the Fox network on November 26, 2000", "text": "It aired on the Fox network on November 26, 2000", "is_correct": true},\n            {"label": "It aired on the Comedy Central network on December 26, 2000", "text": "It aired on the Comedy Central network on December 26, 2000", "is_correct": false},\n            {"label": "It aired on the ABC network on November 26, 2000", "text": "It aired on the ABC network on November 26, 2000", "is_correct": false},\n            {"label": "It aired on the NBC network on December 26, 2000", "text": "It aired on the NBC network on December 26, 2000", "is_correct": false}\n        ],\n        "correct_answer_text": "It aired on the Fox network on November 26, 2000"\n    },\n    {\n        "type": "mcq",\n        "prompt": "Which of the following is not a player followed in the documentary \'Word Wars\'?",\n        "difficulty": "medium",\n        "explanation": "The documentary \'Word Wars\' follows four players: Joe Edley, Matt Graham, Marlon Hill, and Joel Sherman. \'The Godfather\' is not a player.",\n        "options": [\n            {"label": "Joe Edley", "text": "Joe Edley", "is_correct": false},\n            {"label": "Matt Graham", "text": "Matt Graham", "is_correct": false},\n            {"label": "Marlon Hill", "text": "Marlon Hill", "is_correct": false},\n            {"label": "The Godfather", "text": "The Godfather", "is_correct": true}\n        ],\n        "correct_answer_text": "The Godfather"\n    },\n    {\n        "type'
+[2026-07-13 01:15:34,545: ERROR/MainProcess] Quiz generation failed for e4f55b63-ae3d-4083-a102-7515cac0f013
+Traceback (most recent call last):
+  File "D:\quizapp\backend\app\services\ai\quiz_generation_service.py", line 83, in _parse_and_validate
+    payload = json.loads(cleaned)
+  File "C:\Python313\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Python313\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 120 column 9 (char 7772)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\quizapp\backend\app\services\ai\quiz_generation_service.py", line 87, in _parse_and_validate
+    payload = json.loads(_INVALID_JSON_ESCAPE_RE.sub(r"\\\\", cleaned))
+  File "C:\Python313\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Python313\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 120 column 9 (char 7772)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\quizapp\backend\app\tasks\quiz_tasks.py", line 29, in _generate_quiz
+    await QuizGenerationService(session, provider).generate_and_persist(quiz)
+  File "D:\quizapp\backend\app\services\ai\quiz_generation_service.py", line 50, in generate_and_persist
+    questions = self._parse_and_validate(raw_output)
+  File "D:\quizapp\backend\app\services\ai\quiz_generation_service.py", line 90, in _parse_and_validate
+    raise ValidationFailedError("AI provider returned an invalid quiz payload") from exc
+app.core.exceptions.ValidationFailedError: AI provider returned an invalid quiz payload
+[2026-07-13 01:15:34,569: INFO/MainProcess] Task quizzes.generate[12a3c856-85f0-4eef-8770-424374342856] succeeded in 328.8395254999923s: None
